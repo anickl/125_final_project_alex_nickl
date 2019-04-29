@@ -49,15 +49,24 @@ public class MainActivity extends AppCompatActivity {
             final SeekBar thrust = findViewById(R.id.thrust);
 
             //what the buttons do
-            brakes.setOnClickListener(new View.OnClickListener() {
+            brakes.setOnTouchListener(new View.OnTouchListener() {
+                @SuppressLint("ClickableViewAccessibility")
                 @Override
-                public void onClick(View v) {
-                    try {
-                        controlling.setBrakes(!controlling.getBrakes());
-                        System.out.println("brakes");
-                    } catch (RPCException e) {
-                        e.printStackTrace();
+                public boolean onTouch (View v, MotionEvent e) {
+                    if (e.getAction() == MotionEvent.ACTION_DOWN) {
+                        try {
+                            controlling.setBrakes(true);
+                        } catch (RPCException q) {
+                            q.printStackTrace();
+                        }
+                    } else if (e.getAction() == MotionEvent.ACTION_UP) {
+                        try {
+                            controlling.setBrakes(false);
+                        } catch (RPCException q) {
+                            q.printStackTrace();
+                        }
                     }
+                    return false;
                 }
             });
             gear.setOnClickListener(new View.OnClickListener() {
