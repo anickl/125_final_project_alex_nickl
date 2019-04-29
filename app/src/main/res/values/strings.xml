@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">project</string>
+    <string name="Stage">stage</string>
+    <string name="Gear">gear</string>
+    <string name="Brakes">brakes</string>
+    <string name="SAS">sas</string>
+    <string name="PitchUp">pitch Up</string>
+    <string name="PitchDown">pitch Down</string>
+    <string name="RollRight">roll Right</string>
+    <string name="RollLeft">roll Left</string>
+    <string name="YawLeft">yaw Left</string>
+    <string name="YawRight">yaw Right</string>
+    <string name="data">data</string>
+</resources>
